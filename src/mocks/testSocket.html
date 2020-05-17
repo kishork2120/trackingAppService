@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello world</title>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  var socket = io();
+  function send(){
+    socket.emit('coordinates', 'ssss coor');
+  };
+</script>
+
+<body>
+  Hello world
+  <button onclick="send()">send</button>
+</body>
+
+</html>

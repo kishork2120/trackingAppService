@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import {Response, Request} from 'express';
+import { Response, Request } from 'express';
 import TrackService from '../models/track.model';
 
 const trackServiceObject = new TrackService();
@@ -16,7 +16,7 @@ class Track {
    */
   async display(req: Request, res: Response) {
     const list = await trackServiceObject.getList(req.app.locals.db);
-    res.json({message: 'people list', trackList: list});
+    res.json({ message: 'people list', trackList: list });
   }
 }
 
