@@ -1,10 +1,21 @@
 import * as express from 'express';
-import RouterConfig from './master.route';
+import routerConfig from './master.route';
+console.log('objectss');
+import DatabaseService from './services/database.service';
+
+// Initialising dotenv
+require('dotenv').config();
 
 const app = express();
 
-RouterConfig(app);
+// assigning database object to locals to use it as global instance
+app.locals.db = new DatabaseService().db;
 
-app.listen(3000, () => {
-  console.log('server started at http://localhost:3000');
+// Router configuration
+routerConfig(app);
+
+// Stringing server
+app.listen(process.env.PORT, (err) => {
+  if (err) console.error(err);
+  else console.log(`server started at http://localhost:${process.env.PORT}`);
 });
