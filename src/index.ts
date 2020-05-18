@@ -2,6 +2,7 @@ import * as express from 'express';
 import routerConfig from './master.route';
 import DatabaseService from './services/database.service';
 import socketFunctions from './socket/index';
+import * as cors from 'cors';
 
 // Initialising dotenv
 require('dotenv').config();
@@ -10,6 +11,9 @@ const app = express();
 
 // assigning database object to locals to use it as global instance
 app.locals.db = new DatabaseService().db;
+
+// Cors configuration
+app.use(cors());
 
 // Router configuration
 routerConfig(app);

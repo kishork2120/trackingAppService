@@ -4,6 +4,7 @@ import Track from '../controller/track.controller';
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.get('/', Track.display);
+// Track routers
+router.get('/getAllDriverList', Track.getAllDriverList);
 
 export default router;

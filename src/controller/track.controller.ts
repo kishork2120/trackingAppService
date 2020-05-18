@@ -9,14 +9,14 @@ const trackServiceObject = new TrackService();
  */
 class Track {
   /**
-   * display
-   * @description for testing track api
+   * getAllDriverList
+   * @description for getting all driver list
    * @param {Object} req request object from express request
    * @param {Object} res response object from express request
    */
-  async display(req: Request, res: Response) {
-    const list = await trackServiceObject.getList(req.app.locals.db);
-    res.json({ message: 'people list', trackList: list });
+  async getAllDriverList(req: Request, res: Response) {
+    const list = await trackServiceObject.getAllDriverList(req.app.locals.db);
+    res.json({ status: 200, essage: 'driver list', driverList: list });
   }
 }
 

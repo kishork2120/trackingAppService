@@ -6,13 +6,12 @@ import TableConfig from '../config/tableConfig.config';
  */
 class TrackService {
   /**
-   * getList
-   * @description get pepole list
-   * !For Testing purpose
+   * getAllDriverList
+   * @description get asll driver list
    * @param {Object} db - db object for mongo
    * @return {Promise} - resolved to people list
    */
-  getList(db: any) {
+  getAllDriverList(db: any) {
     return db.get(TableConfig.PEOPLE).find({ user_type: 'D' });
   }
 
